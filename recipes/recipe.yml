@@ -7,7 +7,7 @@ description: https://github.com/elliotblackburn/workstation
 
 # the base image to build on top of (FROM) and the version tag to use
 # base-image: ghcr.io/ublue-os/silverblue-main
-base-image: ghcri.io/ublue-os/bluefin # could use dx but I'm a simple man
+base-image: ghcr.io/ublue-os/bluefin # could use dx but I'm a simple man
 image-version: 43 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
