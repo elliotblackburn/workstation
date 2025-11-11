@@ -31,6 +31,8 @@ modules:
         - ublue-os/staging
         - ublue-os/packages
         - scottames/ghostty
+      files:
+        - https://pkgs.tailscale.com/unstable/fedora/tailscale.repo
     install:
       packages:
         - repo: copr:copr.fedorainfracloud.org:scottames:ghostty
