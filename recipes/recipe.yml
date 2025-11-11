@@ -27,6 +27,8 @@ modules:
   - type: dnf
     repos:
       copr:
+        - ublue-os/staging
+        - ublue-os/packages
         - scottames/ghostty
     install:
       packages:
