@@ -7,7 +7,7 @@ description: https://github.com/elliotblackburn/workstation
 
 # the base image to build on top of (FROM) and the version tag to use
 # base-image: ghcr.io/ublue-os/silverblue-main
-base-image: ghcr.io/ublue-os/bluefin-dx # could use dx but I'm a simple man
+base-image: ghcr.io/ublue-os/bluefin # could use dx but I'm a simple man
 image-version: 43 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -33,6 +33,7 @@ modules:
         - scottames/ghostty
       files:
         - https://pkgs.tailscale.com/unstable/fedora/tailscale.repo
+        - https://download.docker.com/linux/fedora/docker-ce.repo
     install:
       packages:
         - repo: copr:copr.fedorainfracloud.org:scottames:ghostty
@@ -43,6 +44,11 @@ modules:
             - zed
         - zsh
         - tmux
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-buildx-plugin
+        - docker-compose-plugin
     replace:
       # We want tailscale unstable for the latest and greatest
       # and for testing.
