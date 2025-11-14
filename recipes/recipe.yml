@@ -23,6 +23,12 @@ modules:
     snippets:
       - "dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release -y"
 
+  # Setup RPM Fusion repositories
+  - type: script
+    snippets:
+      - "dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$releasever.noarch.rpm"
+      - "dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$releasever.noarch.rpm"
+
   # Install packages via dnf
   - type: dnf
     repos:
@@ -42,6 +48,7 @@ modules:
         - repo: terra
           packages:
             - zed
+        - grub-customization
         - zsh
         - tmux
         - docker-ce
